@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "replit-code-exec"
+version = "0.0.1"
+description = "A library for interacting with Replit's code-exec API"
+authors = ["Repl.it <contact@repl.it>"]
+license = "ISC"
+readme = "README.md"
+repository = "https://github.com/replit/replit-code-exec"
+homepage = "https://github.com/replit/replit-code-exec"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: ISC License (ISCL)",
+    "Operating System :: OS Independent",
+]
+packages = [
+  { include = "replit_code_exec", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+instructor = "^0.2.7"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+mypy = "^1.4.0"
+ruff = "^0.0.278"
+types-requests = "^2.31.0.2"
+
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+
+
+[tool.poetry.dev-dependencies]
+Flask = "^2.2.0"
+pytest = "^7.4.1"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+line-length = 100
